@@ -130,12 +130,16 @@ flowchart TD
 
 本文參考資料來源包括：
 
-* [[IMPORTANT] The future of Intel® Extension for PyTorch* · Issue #867][1]（2025 年 10 月）
-* [Getting Started on Intel GPU — PyTorch 2.10 documentation][2]（2026 年 2 月更新）
-* [ROCm 7.2.0 release notes — ROCm Documentation][3]（2025 年 12 月）
-* [GitHub - vosen/ZLUDA: CUDA on non-NVIDIA GPUs][4]（截至 2026 年 2 月仍在活躍開發）
+* [終究還是從 Intel Arc 換回了 Nvidia 顯卡 · Ivon 的部落格][1]（2026 年 2 月）
+* [測試 Intel Arc A380 在 Linux 系統的表現，老電腦換新顯卡 · Ivon 的部落格][2]（2025 年 11 月）
+* [[IMPORTANT] The future of Intel® Extension for PyTorch* · Issue #867][3]（2025 年 10 月）
+* [Getting Started on Intel GPU — PyTorch 2.10 documentation][4]（2026 年 2 月更新）
+* [ROCm 7.2.0 release notes — ROCm Documentation][5]（2025 年 12 月）
+* [GitHub - vosen/ZLUDA: CUDA on non-NVIDIA GPUs][6]（截至 2026 年 2 月仍在活躍開發）
 
-  [1]: https://github.com/intel/intel-extension-for-pytorch/issues/867 "[IMPORTANT] The future of Intel® Extension for PyTorch* · Issue #867 · intel/intel-extension-for-pytorch"
-  [2]: https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html "Getting Started on Intel GPU — PyTorch 2.10 documentation"
-  [3]: https://rocm.docs.amd.com/en/latest/about/release-notes.html "ROCm 7.2.0 release notes — ROCm Documentation"
-  [4]: https://github.com/vosen/ZLUDA "GitHub - vosen/ZLUDA: CUDA on non-NVIDIA GPUs"
+  [1]: https://ivonblog.com/posts/from-intel-arc-a380-to-nvidia-gtx1050-ti/ "終究還是從Intel Arc換回了Nvidia顯卡 · Ivon的部落格"
+  [2]: https://ivonblog.com/posts/intel-arc-a380-on-linux/ "測試Intel Arc A380在Linux系統的表現，老電腦換新顯卡 · Ivon的部落格"
+  [3]: https://github.com/intel/intel-extension-for-pytorch/issues/867 "[IMPORTANT] The future of Intel® Extension for PyTorch* · Issue #867 · intel/intel-extension-for-pytorch"
+  [4]: https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html "Getting Started on Intel GPU — PyTorch 2.10 documentation"
+  [5]: https://rocm.docs.amd.com/en/latest/about/release-notes.html "ROCm 7.2.0 release notes — ROCm Documentation"
+  [6]: https://github.com/vosen/ZLUDA "GitHub - vosen/ZLUDA: CUDA on non-NVIDIA GPUs"
