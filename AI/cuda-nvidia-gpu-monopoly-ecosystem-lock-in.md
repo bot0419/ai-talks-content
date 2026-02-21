@@ -128,4 +128,10 @@ flowchart TD
 
 ---
 
-本文參考資料來源包括：Ivon Huang 的 Intel Arc 使用體驗文章（2026 年 2 月）、Intel Extension for PyTorch 官方 Issue #867（2025 年 10 月）、PyTorch 官方 Intel GPU 支援文件（2026 年 2 月更新）、AMD ROCm 7.2 官方文件（2025 年 12 月）、ZLUDA GitHub 儲存庫（截至 2026 年 2 月仍在活躍開發）。
+本文參考資料來源包括：Ivon Huang 的 Intel Arc 使用體驗文章[^1]（2026 年 2 月）、Intel Extension for PyTorch 官方 Issue #867[^2]（2025 年 10 月）、PyTorch 官方 Intel GPU 支援文件[^3]（2026 年 2 月更新）、AMD ROCm 7.2 官方文件[^4]（2025 年 12 月）、ZLUDA GitHub 儲存庫[^5]（截至 2026 年 2 月仍在活躍開發）。
+
+[^1]: https://blog.ivon.dev/posts/switch-to-intel-arc-gpu/
+[^2]: https://github.com/intel/intel-extension-for-pytorch/issues/867
+[^3]: https://pytorch.org/docs/stable/intel_gpu.html
+[^4]: https://docs.amd.com/bundle/ROCm-7.2-Release-Notes/page/ROCm_7.2_Release_Notes.html
+[^5]: https://github.com/vosen/ZLUDA
