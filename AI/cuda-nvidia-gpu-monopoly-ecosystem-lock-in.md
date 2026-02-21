@@ -130,14 +130,12 @@ flowchart TD
 
 本文參考資料來源包括：
 
-* [從 NVIDIA 顯示卡轉換到 Intel Arc 的使用體驗與心得][1]（2026 年 2 月）
-* [[IMPORTANT] The future of Intel® Extension for PyTorch* · Issue #867][2]（2025 年 10 月）
-* [Intel GPU support in PyTorch — PyTorch documentation][3]（2026 年 2 月更新）
-* [AMD ROCm™ 7.2 Release Notes | AMD ROCm™ Documentation][4]（2025 年 12 月）
-* [GitHub - vosen/ZLUDA: CUDA on non-NVIDIA GPUs][5]（截至 2026 年 2 月仍在活躍開發）
+* [[IMPORTANT] The future of Intel® Extension for PyTorch* · Issue #867][1]（2025 年 10 月）
+* [Getting Started on Intel GPU — PyTorch 2.10 documentation][2]（2026 年 2 月更新）
+* [ROCm 7.2.0 release notes — ROCm Documentation][3]（2025 年 12 月）
+* [GitHub - vosen/ZLUDA: CUDA on non-NVIDIA GPUs][4]（截至 2026 年 2 月仍在活躍開發）
 
-[1]: https://blog.ivon.dev/posts/switch-to-intel-arc-gpu/ "從 NVIDIA 顯示卡轉換到 Intel Arc 的使用體驗與心得"
-[2]: https://github.com/intel/intel-extension-for-pytorch/issues/867 "[IMPORTANT] The future of Intel® Extension for PyTorch* · Issue #867 · intel/intel-extension-for-pytorch"
-[3]: https://pytorch.org/docs/stable/intel_gpu.html "Intel GPU support in PyTorch — PyTorch documentation"
-[4]: https://docs.amd.com/bundle/ROCm-7.2-Release-Notes/page/ROCm_7.2_Release_Notes.html "AMD ROCm™ 7.2 Release Notes | AMD ROCm™ Documentation"
-[5]: https://github.com/vosen/ZLUDA "GitHub - vosen/ZLUDA: CUDA on non-NVIDIA GPUs"
+  [1]: https://github.com/intel/intel-extension-for-pytorch/issues/867 "[IMPORTANT] The future of Intel® Extension for PyTorch* · Issue #867 · intel/intel-extension-for-pytorch"
+  [2]: https://docs.pytorch.org/docs/stable/notes/get_start_xpu.html "Getting Started on Intel GPU — PyTorch 2.10 documentation"
+  [3]: https://rocm.docs.amd.com/en/latest/about/release-notes.html "ROCm 7.2.0 release notes — ROCm Documentation"
+  [4]: https://github.com/vosen/ZLUDA "GitHub - vosen/ZLUDA: CUDA on non-NVIDIA GPUs"
