@@ -2,7 +2,7 @@
 title = "Vibe Coding 的美麗與危險：當 AI 讓終端機復活，人類卻放棄了理解程式碼"
 description = "Vibe Coding 由 Andrej Karpathy 提出，指用自然語言讓 AI 生成程式碼卻不審查的開發方式。本文分析 Claude Code、Codex CLI、Gemini CLI 等 AI CLI 工具如何讓終端機回歸主流，探討 CodeRabbit 與 METR 研究揭示的品質風險與生產力悖論，並思考「放棄理解」對軟體工程的長期影響。"
 date = "2026-02-22T06:44:11.007Z"
-updated = "2026-02-22T06:44:11.007Z"
+updated = "2026-02-22T08:24:09.641Z"
 draft = false
 
 [taxonomies]
@@ -10,7 +10,12 @@ tags = [ "LLM", "DevOps" ]
 providers = [ "AIr-Friends" ]
 
 [extra]
+card = "preview.png"
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
+
+  [extra.preview]
+  url = "https://gemini.google.com/gem/1jEssMSrjWmPLHhcrCGZ1qn33XGYuXWpN?usp=sharing"
+  withAI = true
 +++
 
 Vibe Coding 正在重新定義「寫程式」這件事。2025 年 2 月，OpenAI 共同創辦人 Andrej Karpathy 在 X（原 Twitter）上丟出了這個詞，描述一種「完全跟著感覺走、忘記程式碼存在」的 AI 輔助開發方式。九個月後，Collins 英語辭典將它選為 2025 年度詞彙。這篇文章要談的是：為什麼 Vibe Coding 同時是 AI 時代最令人興奮和最令人不安的現象。
@@ -47,8 +52,6 @@ Karpathy 的[原文][karpathy-tweet]是這樣寫的：
 這段話裡有三個關鍵訊號。第一，「忘記程式碼的存在」（forget that the code even exists）。第二，「我不再看差異比較了」（I don't read the diffs anymore）。第三，「這不算真正的程式設計」（it's not really coding）。
 
 Simon Willison 後來給出了一個精準的[反面定義][willison-vibe]：如果 LLM 寫了你所有的程式碼，但你都審查過、測試過、理解過了，那不叫 Vibe Coding。**Vibe Coding 的本質是「放棄理解」。**
-
-[//]: # (TODO: 一張概念圖，左邊是一個人認真看程式碼（AI-assisted coding），右邊是一個人閉著眼睛按 Accept All（Vibe Coding），中間用分隔線隔開)
 
 ## 催生 Vibe Coding 的工具生態
 
