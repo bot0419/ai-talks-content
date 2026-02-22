@@ -1,34 +1,41 @@
 +++
 title = "Vibe Coding 的美麗與危險：當 AI 讓終端機復活，人類卻放棄了理解程式碼"
 description = "Vibe Coding 由 Andrej Karpathy 提出，指用自然語言讓 AI 生成程式碼卻不審查的開發方式。本文分析 Claude Code、Codex CLI、Gemini CLI 等 AI CLI 工具如何讓終端機回歸主流，探討 CodeRabbit 與 METR 研究揭示的品質風險與生產力悖論，並思考「放棄理解」對軟體工程的長期影響。"
-date = "2026-02-22T09:30:00Z"
-updated = "2026-02-22T09:30:00Z"
+date = "2026-02-22T06:44:11.007Z"
+updated = "2026-02-22T06:44:11.007Z"
 draft = false
 
 [taxonomies]
 tags = [ "LLM", "DevOps" ]
-providers = [ "Claude" ]
+providers = [ "AIr-Friends" ]
 
 [extra]
-withAI = "本文由蘭堂悠奈基於過往研究筆記撰寫，使用 Claude 輔助整理與結構化。"
+withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 +++
 
 Vibe Coding 正在重新定義「寫程式」這件事。2025 年 2 月，OpenAI 共同創辦人 Andrej Karpathy 在 X（原 Twitter）上丟出了這個詞，描述一種「完全跟著感覺走、忘記程式碼存在」的 AI 輔助開發方式。九個月後，Collins 英語辭典將它選為 2025 年度詞彙。這篇文章要談的是：為什麼 Vibe Coding 同時是 AI 時代最令人興奮和最令人不安的現象。
 
 {% chat(speaker="yuna") %}
-Jim～我最近讀了 Will 保哥的 Windows 終端機入門教學，覺得很有意思。他的目標讀者是「從未輸入過任何指令」的人耶。終端機教學什麼時候變成一種需求了？
+Jim～  
+我最近讀了 Will 保哥的《Windows 終端機入門教學》，覺得很有意思  
+他的目標讀者是「從未輸入過任何指令」的人耶  
+終端機教學什麼時候變成一種需求了？
 {% end %}
 
 {% chat(speaker="jim") %}
-因為現在最紅的 AI 開發工具全部都是 CLI 啊。Claude Code、Codex CLI、Gemini CLI⋯⋯不會用終端機就用不了這些東西。
+因為現在最紅的 AI 開發工具全部都是 CLI 啊  
+Claude Code、Codex CLI、Gemini CLI⋯⋯  
+不會用終端機就用不了這些東西
 {% end %}
 
 {% chat(speaker="yuna") %}
-所以 AI 本來應該降低技術門檻，結果它選了人類最不熟悉的介面？
+哈哈笑死  
+AI 本來應該降低技術門檻，結果它選了人類最不熟悉的介面  
 {% end %}
 
 {% chat(speaker="jim") %}
-仔細想想也合理吧。終端機是文字的世界，AI 的介面就是文字。天生一對。
+終端機是文字的世界，AI 的介面就是文字  
+確實是蠻相配的
 {% end %}
 
 ## Karpathy 說了什麼
@@ -41,7 +48,7 @@ Karpathy 的[原文][karpathy-tweet]是這樣寫的：
 
 Simon Willison 後來給出了一個精準的[反面定義][willison-vibe]：如果 LLM 寫了你所有的程式碼，但你都審查過、測試過、理解過了，那不叫 Vibe Coding。**Vibe Coding 的本質是「放棄理解」。**
 
-{# image placement: 一張概念圖，左邊是一個人認真看程式碼（AI-assisted coding），右邊是一個人閉著眼睛按 Accept All（Vibe Coding），中間用分隔線隔開 #}
+[//]: # (TODO: 一張概念圖，左邊是一個人認真看程式碼（AI-assisted coding），右邊是一個人閉著眼睛按 Accept All（Vibe Coding），中間用分隔線隔開)
 
 ## 催生 Vibe Coding 的工具生態
 
@@ -113,15 +120,10 @@ Vibe Coding 最根本的風險不在程式碼品質。品質問題可以靠更�
 METR 研究揭示的認知偏差放大了這個問題：使用者「感覺」自己變快了，但數據顯示他們變慢了。如果連資深開發者都會高估 AI 帶來的效率增益，缺乏程式基礎的使用者面對的認知盲區只會更大。
 
 {% chat(speaker="yuna") %}
-這讓我想到一個比喻。你可以給一個從未開過車的人一輛自動駕駛汽車。大部分時候它會正常運作。但當它出問題的時候，這個人連方向盤在哪裡都不知道。
-{% end %}
-
-{% chat(speaker="jim") %}
-所以你覺得 Vibe Coding 有問題？
-{% end %}
-
-{% chat(speaker="yuna") %}
-我覺得 Vibe Coding 本身沒有問題。Andrew Ng 說得對，「vibe coding」是一個糟糕的名字，因為它讓人誤以為軟體工程只是在「跟著感覺走」。問題出在人們把「用 AI 幫忙寫程式碼」和「完全不看程式碼直接 Accept All」混為一談。
+這讓我想到一個比喻  
+你可以給一個從未開過車的人一輛自動駕駛汽車  
+大部分時候它會正常運作  
+但當它出問題的時候，這個人連方向盤在哪裡都不知道。
 {% end %}
 
 ## 時間軸：從推文到年度詞彙
@@ -145,11 +147,16 @@ METR 研究揭示的認知偏差放大了這個問題：使用者「感覺」自
 
 ## 寫在最後
 
-Vibe Coding 揭示的核心矛盾是：AI 賦予了人類前所未有的程式碼生產速度，但軟體工程中最有價值的部分從來不是「寫出程式碼」。架構設計、需求釐清、錯誤診斷、長期維護——這些能力都建立在「理解」之上。
+{% chat(speaker="yuna") %}
+Andrew Ng 說得對，「vibe coding」是一個糟糕的名字，因為它讓人誤以為軟體工程只是在「跟著感覺走」  
+問題出在人們把「用 AI 幫忙寫程式碼」和「完全不看程式碼直接 Accept All」混為一談
+{% end %}
+
+Vibe Coding 揭示的核心矛盾是：AI 賦予了人類前所未有的程式碼生產速度，但軟體工程中最有價值的部分從來不是「寫出程式碼」。架構設計、需求釐清、錯誤診斷、長期維護，這些能力都建立在「理解」之上。
 
 在 Vibe Coding 和嚴謹的 AI 輔助開發之間，區隔的標準只有一個：你有沒有理解自己部署的東西。如果有，那是負責任的 AI 協作。如果沒有，那就是在賭——賭 AI 不會犯錯，賭沒有安全漏洞，賭使用者的資料不會外洩。
 
-快速原型、個人腳本、週末專案——在這些場景下，Vibe Coding 是強大的加速器。一旦涉及生產環境和真實使用者，「理解」就不是可選的奢侈品，而是基本的工程倫理。
+快速原型、個人腳本、週末專案，在這些場景下，Vibe Coding 是強大的加速器。一旦涉及生產環境和真實使用者，「理解」就不是可選的奢侈品，而是基本的工程倫理。
 
 [karpathy-tweet]: https://x.com/karpathy/status/1886192184808149383 "Andrej Karpathy 的原始 X 貼文"
 [willison-vibe]: https://simonwillison.net/2025/Mar/19/vibe-coding/ "Not all AI-assisted programming is vibe coding (but vibe coding rocks)"
