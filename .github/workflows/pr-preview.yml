@@ -48,13 +48,10 @@ jobs:
           # Verify installation
           zola --version
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v7
-
-      - name: Switch to ${{ matrix.site.name }} site
+      - name: Switch to 聆.tw site
         run: |
           chmod +x ./switch-site.sh
-          ./switch-site.sh "${{ matrix.site.name }}"
+          ./switch-site.sh "聆.tw"
 
       - name: Build site for preview
         run: zola build --base-url https://ai-talks-pr-${{ github.event.pull_request.number }}.jim60105.workers.dev
