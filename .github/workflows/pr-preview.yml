@@ -1,0 +1,84 @@
+name: PR Preview Deployment
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - master
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    name: Deploy PR Preview
+
+    # Only run if PR is not from a fork (for security - forks don't have access to secrets)
+    if: github.event.pull_request.head.repo.full_name == github.repository
+
+    permissions:
+      contents: read
+      pull-requests: write # Required to post PR comments
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: true
+          fetch-depth: 0
+          token: ${{ secrets.CR_PAT }}
+
+      - name: Download and Install Zola
+        run: |
+          # Download zola binary from GitHub releases
+          wget -O zola.tar.gz "https://github.com/getzola/zola/releases/download/v${{ vars.ZOLA_VERSION }}/zola-v${{ vars.ZOLA_VERSION }}-x86_64-unknown-linux-musl.tar.gz"
+
+          # Extract the tar.gz
+          tar -xzf zola.tar.gz
+
+          # Move zola to /usr/local/bin and make it executable
+          sudo mv zola /usr/local/bin/
+          sudo chmod +x /usr/local/bin/zola
+
+          # Verify installation
+          zola --version
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Build site for preview
+        run: zola build --base-url https://ai-talks-pr-${{ github.event.pull_request.number }}.jim60105.workers.dev
+
+      - name: Deploy PR Preview to Cloudflare Workers
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "latest"
+          # Deploy to unique Worker name based on PR number to avoid race conditions
+          # Each PR gets its own isolated Worker: ai-talks-pr-{number}
+          command: deploy --name ai-talks-pr-${{ github.event.pull_request.number }} --env pr
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v4
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: "github-actions[bot]"
+          body-includes: "🚀 PR Preview Deployment"
+
+      - name: Create or Update PR Comment
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## 🚀 PR Preview Deployment
+
+            | Status | Details |
+            | ------ | ------- |
+            | ✅ Deployed | Commit: `${{ github.event.pull_request.head.sha }}` |
+            | 🔗 Preview URL | https://ai-talks-pr-${{ github.event.pull_request.number }}.jim60105.workers.dev |
+            | 📅 Updated | ${{ github.event.pull_request.updated_at }} |
+
+            > **Note**: This preview will be automatically deleted when the PR is closed or merged.
+          edit-mode: replace

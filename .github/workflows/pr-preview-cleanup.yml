@@ -1,0 +1,53 @@
+name: PR Preview Cleanup
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    name: Cleanup PR Preview
+
+    # Only run if the preview was deployed (not from a fork)
+    if: github.event.pull_request.head.repo.full_name == github.repository
+
+    permissions:
+      contents: read
+      pull-requests: write # Required to find and update PR comments
+
+    steps:
+      - name: Delete PR Preview Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "latest"
+          # Delete the preview Worker associated with this PR
+          command: delete --name ai-talks-pr-${{ github.event.pull_request.number }} --force
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v4
+        id: fc
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          comment-author: "github-actions[bot]"
+          body-includes: "🚀 PR Preview Deployment"
+
+      - name: Update PR Comment
+        if: steps.fc.outputs.comment-id != ''
+        uses: peter-evans/create-or-update-comment@v5
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## 🚀 PR Preview Deployment
+
+            | Status | Details |
+            | ------ | ------- |
+            | 🗑️ Deleted | Preview has been cleaned up |
+            | 📅 Closed | ${{ github.event.pull_request.closed_at }} |
+
+            > The preview Worker has been automatically deleted as this PR was ${{ github.event.pull_request.merged && 'merged' || 'closed' }}.
+          edit-mode: replace
