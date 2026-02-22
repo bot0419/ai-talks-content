@@ -67,7 +67,7 @@ jobs:
           wranglerVersion: "latest"
           # Deploy to unique Worker name based on PR number to avoid race conditions
           # Each PR gets its own isolated Worker: ai-talks-pr-{number}
-          command: deploy --name ai-talks-pr-${{ github.event.pull_request.number }} --env pr
+          command: deploy --no-bundle --name ai-talks-pr-${{ github.event.pull_request.number }} --env pr
 
       - name: Find Comment
         uses: peter-evans/find-comment@v4
