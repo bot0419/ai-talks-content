@@ -20,9 +20,18 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          submodules: true
           fetch-depth: 0
           token: ${{ secrets.CR_PAT }}
+          repository: jim60105/blog
+          ref: master
+          submodules: true
+          # Workaround for issue "Persisting credentials for submodules" step failed with "Error: ENOENT: no such file or directory" when the submodule name contains non-ASCII characters
+          # https://github.com/actions/checkout/issues/1959
+          persist-credentials: false
+
+      - name: Checkout `content` submodule to current PR branch
+        run: |
+          git -C "聆.tw/content" checkout origin/${{ github.event.pull_request.head.ref }}
 
       - name: Download and Install Zola
         run: |
@@ -41,6 +50,11 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
+
+      - name: Switch to ${{ matrix.site.name }} site
+        run: |
+          chmod +x ./switch-site.sh
+          ./switch-site.sh "${{ matrix.site.name }}"
 
       - name: Build site for preview
         run: zola build --base-url https://ai-talks-pr-${{ github.event.pull_request.number }}.jim60105.workers.dev
