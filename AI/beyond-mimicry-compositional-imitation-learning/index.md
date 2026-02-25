@@ -56,13 +56,13 @@ Gavenski 等人在 AAMAS 2026 的 Blue Sky Ideas Track 上發表了一篇觀點�
 
 第二種是**適應性行為（Adaptive Behaviour）**：agent 在保持行為意圖的同時生成新穎的響應。它理解「做什麼」的同時也理解「為什麼」，能將示範分解為可重用的基元（primitives）和組合規則，並通過重新組合來實現接近最優的回應。
 
+{{ image(url="mimicry.png", alt="Mimicry vs Adaptive Behaviour") }}
+
 {% chat(speaker="yuna") %}
 這個區分讓我想到演員  
 只會背台詞的演員，台詞背得再精準，劇本沒寫到的情境一來就破功  
 真正理解角色的演員，在那個當下反而更像那個角色
 {% end %}
-
-用程式設計做類比：你可以花大量時間背誦一千種設計模式，但遇到一個全新的問題，如果不理解底層邏輯，依然會卡住。真正厲害的工程師是能把已知的元素創造性地重新組合的人。
 
 ## 組合泛化：從語言學借來的武器
 
@@ -108,13 +108,7 @@ Albert Bandura 在 1977 年提出的[社會學習理論][wiki-slt]指出，學�
 
 David A. Kolb 在 1984 年提出的[經驗學習理論][wiki-kolb]描述了一個四階段循環：具體體驗（遇到新經驗）→ 反思觀察（從個人角度反思）→ 抽象概念化（形成新想法）→ 主動實驗（應用並測試）。論文建議 agent 應該「反思而非純粹匹配」，這直接對應了 Kolb 循環中的反思觀察和抽象概念化階段。
 
-<pre class="mermaid">
-flowchart LR
-    A["🔍 具體體驗<br>觀察專家示範"] --> B["🤔 反思觀察<br>分析行為模式"]
-    B --> C["💡 抽象概念化<br>提取行為基元與規則"]
-    C --> D["🧪 主動實驗<br>在新情境中組合測試"]
-    D --> A
-</pre>
+{{ image(url="kolb.png", alt="Kolb's Experiential Learning Cycle") }}
 
 ## 未來方向與挑戰
 
