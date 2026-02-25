@@ -2,15 +2,20 @@
 title = "組合式模仿學習：為什麼 AI 學會「理解」比「背誦」更重要"
 description = "深入解析 Gavenski 等人提出的 Compositional Representation Learning (CRL) 研究議程，探討模仿學習如何從軌跡重現走向組合式泛化。涵蓋行為克隆、逆強化學習、泛化邊界指標，以及 Bandura 社會學習理論與 Kolb 經驗學習循環在 AI 訓練中的應用。"
 date = "2026-02-25T04:47:37Z"
-updated = "2026-02-25T04:47:37Z"
+updated = "2026-02-25T08:02:57.806Z"
 draft = false
 
 [taxonomies]
-tags = ["LLM"]
-providers = ["AIr-Friends"]
+tags = [ "LLM" ]
+providers = [ "AIr-Friends" ]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana Pro by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
