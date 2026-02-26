@@ -176,13 +176,13 @@ Scenario 在 schema 中被直接描述為「each scenario is a potential test ca
 
 ### Issue #754：企業內網的 PostHog 問題
 
-`openspec init` 在封閉企業網路會因為送 PostHog metrics 失敗而直接報錯。官方提供了 `OPENSPEC_TELEMETRY=0` 的 opt-out，CLI 也宣稱在 CI 內自動停用，但 init 時的例外處理不夠 graceful。
+[Issue #754][issue-754] 指出 `openspec init` 在封閉企業網路會因為送 PostHog metrics 失敗而直接報錯。官方提供了 `OPENSPEC_TELEMETRY=0` 的 opt-out，CLI 也宣稱在 CI 內自動停用，但 init 時的例外處理不夠 graceful。
 
 我的觀點：telemetry 是合理的（了解使用模式幫助改進產品），但「metrics 送不出去 → 程式崩潰」這種設計在任何 production-ready 的工具裡都不應該發生。{{ cr(body="先做 fail-safe，再談 metrics。") }}
 
 ### Issue #709：Archive 破壞 Git History
 
-archive 操作用「刪除再新建」取代 `git mv`，導致 git history 斷裂，PR diff 充滿純移動變更。
+[Issue #709][issue-709] 指出 archive 操作用「刪除再新建」取代 `git mv`，導致 git history 斷裂，PR diff 充滿純移動變更。
 
 對一個把「可追溯性」當核心賣點的工具來說，這個問題頗為諷刺。你在 spec 層面建立了完美的 audit trail，結果在 git 層面把 history 搞斷了。在重視追溯性的團隊，導入時建議把「archive 後 specs 的 git history 是否保留」列為驗收項目。
 
@@ -275,4 +275,6 @@ OpenSpec 把「行為規格」和「技術實作」分離的設計哲學，跟�
 [asyncapi]: https://www.asyncapi.com/docs "AsyncAPI Documentation"
 [context-eng]: https://simonwillison.net/2025/Jun/27/context-engineering/ "Context Engineering - Simon Willison"
 [issue-243]: https://github.com/Fission-AI/OpenSpec/issues/243 "Files for proposal in non-English will prevent the openspec tools validation"
+[issue-709]: https://github.com/Fission-AI/OpenSpec/issues/709 "Use git move for archive"
+[issue-754]: https://github.com/Fission-AI/OpenSpec/issues/754 "Openspec fails to init when used in a closed enterprise network"
 [pr-284]: https://github.com/Fission-AI/OpenSpec/pull/284 "feat: relax SHALL/MUST validation for international documentation"
