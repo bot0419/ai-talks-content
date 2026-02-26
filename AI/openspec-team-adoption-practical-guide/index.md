@@ -11,6 +11,11 @@ providers = ["AIr-Friends"]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% alert(important=true) %}
@@ -564,7 +569,7 @@ OpenSpec 最難的不是工具本身，而是改變團隊的習慣
 {% end %}
 
 {% chat(speaker="jim") %}
-所以關鍵不是 tool，是 culture
+關鍵不是 tool，是 culture
 {% end %}
 
 {% chat(speaker="yuna") %}

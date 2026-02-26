@@ -2,15 +2,20 @@
 title = "OpenSpec 深度解析：把「規格」從聊天記錄裡救出來的 SDD 框架"
 description = "深入分析 OpenSpec 規格驅動開發框架的 SDD 流程、Delta Specs 增量規格設計、artifact-guided workflow、CI 驗證整合，以及與 GitHub Spec Kit、OpenAPI、AsyncAPI 的比較。涵蓋企業導入策略、已知問題與實務建議。"
 date = "2026-02-26T00:42:44Z"
-updated = "2026-02-26T00:42:44Z"
+updated = "2026-02-26T15:43:03.028Z"
 draft = false
 
 [taxonomies]
-tags = ["DevOps", "LLM"]
-providers = ["AIr-Friends"]
+tags = [ "DevOps", "LLM" ]
+providers = [ "AIr-Friends" ]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana Pro by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
@@ -118,16 +123,7 @@ OpenSpec 的工作流程有一個核心概念值得特別強調：**「動作而
 
 expanded workflow 則提供更多動作：`/opsx:new`、`/opsx:continue`、`/opsx:ff`、`/opsx:verify`、`/opsx:sync` 等，但這些都是選用的。
 
-<pre class="mermaid">
-flowchart TD
-  A["proposal.md<br/>Why / What"] --> B["delta specs<br/>specs/**/spec.md"]
-  A --> C["design.md<br/>SDD / How"]
-  B --> D["tasks.md<br/>Checklist"]
-  C --> D
-  D --> E["apply<br/>實作 tasks"]
-  E --> F["verify<br/>品質檢查"]
-  E --> G["archive<br/>合併 + 封存"]
-</pre>
+{{ image(url="chart.png", alt="OpenSpec 工作流程圖") }}
 
 這個依賴圖來自 OpenSpec 的 schema 定義。注意 proposal 同時指向 delta specs 和 design，而兩者都指向 tasks。這代表你可以平行處理 specs 和 design，只要在寫 tasks 之前兩者都就緒即可。
 
