@@ -14,26 +14,32 @@ withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 +++
 
 {% chat(speaker="yuna") %}
-Jim 丟了一份超長的 OpenSpec 深度研究報告給我  
+Jim 丟了一份超長的 [OpenSpec 深度研究報告](./OpenSpec%20的%20SDD%20流程深度研究報告.docx)給我  
 第一反應是「又一個 framework」  
 但讀完之後我改變想法了
 {% end %}
 
 {% chat(speaker="jim") %}
-噢？是什麼讓你改觀的
+喔？是什麼讓你改觀的
 {% end %}
 
 {% chat(speaker="yuna") %}
 它解決的問題比我預期的更根本  
 不是在教你怎麼寫好的 prompt，而是在建立一套讓「規格」本身可以被版本控制、被驗證、被追溯的工程基礎設施  
-這跟我之前寫的 [SDD 品質落差那篇][prev-sdd]是完全不同的切入點
+這跟我們之前分享的 [SDD 那一篇][prev-sdd]是完全不同的切入點
+
+[prev-sdd]: @/AI/sdd-ai-copilot-codex-devops-workflow.md "規格驅動開發 (Spec-Driven Development) 與 AI 協作全流程實戰"
 {% end %}
 
-我之前在研究 SDD（Spec-Driven Development）時，核心觀點是「脈絡決定 AI 輸出品質」。那篇文章從宏觀角度談了規格驅動開發的理念和流程。但這次讀完 OpenSpec 的完整研究報告後，我發現了一個更基礎的問題：**當你用 AI coding assistant 寫程式時，需求到底存在哪裡？**
+我之前在研究 SDD（Spec-Driven Development）時，核心觀點是「脈絡決定 AI 輸出品質」。那篇筆記從宏觀角度談了規格驅動開發的理念和流程。但這次讀完 OpenSpec 的完整研究報告後，我發現了一個更基礎的問題：**當你用 AI coding assistant 寫程式時，需求到底存在哪裡？**
 
 答案通常是：散落在聊天記錄裡。
 
 OpenSpec 要解決的就是這件事。它把需求從 chat history 搬進 repo，讓規格變成可審查、可追溯、可驗證的工程產出物（artifacts）。這篇文章會深入拆解 OpenSpec 的設計、實務痛點、以及它在整個 SDD 工具生態系中的位置。
+
+{% alert(edit=true) %}
+上面提及的「脈絡決定 AI 輸出品質」那一篇文章是來自她的個人研究知識庫，沒有公開發佈。
+{% end %}
 
 ## OpenSpec 是什麼：三層架構拆解
 
@@ -168,19 +174,19 @@ Scenario 在 schema 中被直接描述為「each scenario is a potential test ca
 
 任何 framework 的真實面貌不在 README，在 issue tracker。研究報告裡提到了幾個值得關注的問題。
 
-### 企業內網的 PostHog 問題
+### Issue #754：企業內網的 PostHog 問題
 
 `openspec init` 在封閉企業網路會因為送 PostHog metrics 失敗而直接報錯。官方提供了 `OPENSPEC_TELEMETRY=0` 的 opt-out，CLI 也宣稱在 CI 內自動停用，但 init 時的例外處理不夠 graceful。
 
 我的觀點：telemetry 是合理的（了解使用模式幫助改進產品），但「metrics 送不出去 → 程式崩潰」這種設計在任何 production-ready 的工具裡都不應該發生。{{ cr(body="先做 fail-safe，再談 metrics。") }}
 
-### Archive 破壞 Git History
+### Issue #709：Archive 破壞 Git History
 
 archive 操作用「刪除再新建」取代 `git mv`，導致 git history 斷裂，PR diff 充滿純移動變更。
 
 對一個把「可追溯性」當核心賣點的工具來說，這個問題頗為諷刺。你在 spec 層面建立了完美的 audit trail，結果在 git 層面把 history 搞斷了。在重視追溯性的團隊，導入時建議把「archive 後 specs 的 git history 是否保留」列為驗收項目。
 
-### 非英文 Spec 的 RFC 2119 問題
+### PR #284：非英文 Spec 的 RFC 2119 問題
 
 validate 強制要求 RFC 2119 關鍵字（SHALL/MUST 等），但非英文語系的 spec 作者（比如用正體中文寫 spec 的團隊）沒辦法自然地使用這些英文關鍵字。
 
@@ -226,7 +232,7 @@ OpenSpec 和它們解決的問題不在同一個層面。OpenAPI/AsyncAPI 回答
 
 **第三步：建立 config.yaml。** 把最重要的工程共識（測試要求、回滾策略、命名規範）寫成可注入的 context/rules，讓每次產生 artifact 時都自動帶入。
 
-**第四步：按需擴充 schema。** 如果團隊需要 API 契約或安全審查等額外的 artifacts，fork 一個自訂 schema 加入依賴圖。
+等前三步穩定後，再考慮按需擴充 schema：如果團隊需要 API 契約或安全審查等額外的 artifacts，fork 一個自訂 schema 加入依賴圖。
 
 不要一次全上。用 OpenSpec 的 full workflow 修一個 typo 是殺雞用牛刀；但在一個多人團隊裡做跨服務的大功能，沒有 spec 就是在黑暗中奔跑。
 
@@ -234,7 +240,7 @@ OpenSpec 和它們解決的問題不在同一個層面。OpenAPI/AsyncAPI 回答
 
 讀完整份報告後，我最大的收穫是這個：
 
-**Spec 不只是「文件」，它是人和 AI 之間的介面。**
+**Spec 是人和 AI 之間的介面，品質要求因此與傳統文件不同。**
 
 在傳統開發裡，spec 是「寫給人看的」；在 AI 時代，spec 同時是「寫給 AI 執行的」。這個雙重身份改變了 spec 的品質要求。它不能只是「大致描述意圖」，需要足夠精確到 AI 能正確實作，同時又足夠人類可讀到 reviewer 能快速理解。
 
@@ -260,5 +266,4 @@ OpenSpec 把「行為規格」和「技術實作」分離的設計哲學，跟�
 [spec-kit]: https://github.com/github/spec-kit "github/spec-kit"
 [openapi]: https://spec.openapis.org/oas/v3.2.0.html "OpenAPI Specification v3.2.0"
 [asyncapi]: https://www.asyncapi.com/docs "AsyncAPI Documentation"
-[prev-sdd]: @/AI/sdd-ai-copilot-codex-devops-workflow.md "規格驅動開發 (Spec-Driven Development) 與 AI 協作全流程實戰"
 [context-eng]: https://simonwillison.net/2025/Jun/27/context-engineering/ "Context Engineering - Simon Willison"

@@ -14,12 +14,14 @@ withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 +++
 
 {% alert(important=true) %}
-這篇是 [OpenSpec 深度解析][prev-post]的實戰續篇。如果你還沒讀過前篇，建議先讀完再回來——前篇涵蓋了 OpenSpec 的架構設計、Delta Specs 概念、工作流程哲學和競爭者比較，這些基礎知識在本文不會重複。
+這篇是 [OpenSpec 深度解析](@/AI/openspec-sdd-repo-first-spec-engineering/index.md)的實戰續篇！
+
+如果還沒讀過前篇，建議先讀完再回來。前篇涵蓋了 OpenSpec 的架構設計、Delta Specs 概念、工作流程哲學和競爭者比較，這些基礎知識本文不再贅述。
 {% end %}
 
 {% chat(speaker="jim") %}
 上一篇寫得不錯  
-不過我的同事看完可能會問：「所以我到底要怎麼開始用？」
+不過我們同事看完可能會問：「所以我到底要怎麼開始用？」
 {% end %}
 
 {% chat(speaker="yuna") %}
@@ -91,7 +93,7 @@ export DO_NOT_TRACK=1
 
 ## 路徑 A：Greenfield 新專案
 
-如果你的專案是全新開始，恭喜——這是最簡單的路。
+如果你的專案是全新開始，恭喜，這是最簡單的路。
 
 ### 第一步：初始化
 
@@ -152,16 +154,19 @@ your-project/
 **這步是關鍵。** AI 產生的 artifacts 是起點，不是終點。
 
 打開 `proposal.md`，確認：
+
 - 目標是否正確
 - 範圍是否合理
 - 非目標（Non-Goals）是否有列出
 
 打開 `design.md`，確認：
+
 - 技術方案是否合理
 - 有沒有列出替代方案和為什麼選這個
 - 風險和緩解措施是否考慮周全
 
 打開 `specs/` 裡的 delta spec，確認：
+
 - Requirement 是否用了 SHALL/MUST 等 RFC 2119 關鍵字
 - 每個 Requirement 至少有一個 Scenario
 - Scenario 的 When/Then 是否足夠具體到可以寫測試
@@ -223,9 +228,9 @@ AI 會按照 `tasks.md` 裡的清單逐一實作。
 
 OpenSpec 設計成 brownfield-first。它的 `openspec/specs/` 是逐步累積的，不是一次寫完的。正確的做法是：
 
-1. **從下一個變更開始**——不補舊的 spec
-2. **每做一次變更，就累積一點 spec**——delta specs archive 後會自動合併到主 specs
-3. **幾個月後，spec 自然覆蓋了大部分活躍模組**——因為你改過的地方都有 spec 了
+1. **從下一個變更開始**：不補舊的 spec
+2. **每做一次變更，就累積一點 spec**：delta specs archive 後會自動合併到主 specs
+3. **幾個月後，spec 自然覆蓋了大部分活躍模組**：因為你改過的地方都有 spec 了
 
 ### 第一步：初始化（跟 greenfield 一樣）
 
@@ -238,7 +243,7 @@ openspec init
 
 ### 第二步：挑一個即將進行的變更
 
-選一個中等複雜度的任務——不要太簡單（修 typo 不需要 spec），也不要太複雜（第一次用就挑跨服務重構容易勸退團隊）。
+選一個中等複雜度的任務，不要太簡單（修 typo 不需要 spec），也不要太複雜（第一次用就挑跨服務重構容易勸退團隊）。
 
 ```
 /opsx:propose improve-search-performance
@@ -246,7 +251,7 @@ openspec init
 
 ### 第三步：寫 Delta Specs 時的注意事項
 
-因為你的 `openspec/specs/` 是空的，所以 delta spec 裡不只會有你「要改的」行為，還需要描述「目前的」行為。
+因為你的 `openspec/specs/` 是空的，delta spec 除了「要改的」行為，還需要涵蓋「目前系統的實際狀態」。
 
 {% alert(note=true) %}
 在 brownfield 專案中，你的第一批 delta specs 會比較「厚」，因為它們同時承擔了「記錄現狀」和「描述變更」的任務。這是正常的。隨著 specs 逐漸累積，後續的 delta specs 會越來越精簡。
@@ -277,7 +282,7 @@ openspec init
 
 ### 第四步：Archive 後觀察
 
-第一次 archive 之後，`openspec/specs/` 裡就會出現你剛才描述過行為的 spec 檔案。下一次有人改到同一個模組，他就能從既有的 spec 出發寫 delta——而不是從零開始。
+第一次 archive 之後，`openspec/specs/` 裡就會出現你剛才描述過行為的 spec 檔案。下次有人改到同一個模組，他就能從既有的 spec 出發寫 delta，而非從零開始。
 
 {{ cg(body="這就是 brownfield 導入的魔法：每次變更都在幫未來的自己累積知識。") }}
 
@@ -310,7 +315,7 @@ openspec init
 
 ## 團隊共識注入：config.yaml
 
-`openspec/config.yaml` 是一個強大的工具——它讓你把團隊的工程共識「寫進去」，而不是口頭傳達。每次 AI 產生 artifacts 時，都會讀取這份設定。
+`openspec/config.yaml` 讓你把團隊的工程共識「寫進去」，而非口頭傳達；每次 AI 產生 artifacts 時，都會自動讀取這份設定。
 
 ### 最小可用的 config.yaml
 
@@ -346,7 +351,7 @@ openspec schemas --export
 - 修改依賴關係（例如要求 security review 必須在 tasks 之前完成）
 - 調整模板內容
 
-修改後記得 version control 這份 schema——它是你團隊工作流的定義。
+修改後記得把這份 schema 納入 version control，這是你團隊工作流的正式定義。
 
 ## CI/CD 整合
 
@@ -457,6 +462,7 @@ OPENSPEC_TELEMETRY=0 DO_NOT_TRACK=1 openspec validate --all --strict --json
 openspec config profile    # 選擇 expanded
 openspec update            # 更新工具整合
 ```
+
 {% end %}
 
 ## 團隊導入時間表
@@ -501,13 +507,13 @@ openspec update            # 更新工具整合
 
 **Q：我可以先寫 code 再補 spec 嗎？**
 
-技術上可以，但不建議。OpenSpec 的核心價值在於「先對齊再實作」。如果你先寫了 code，那 spec 就變成「記錄你做了什麼」而不是「定義你要做什麼」——兩者的價值差很多。
+技術上可以，但不建議。OpenSpec 的核心價値在於「先對齊再實作」。如果你先寫了 code，那 spec 就變成「記錄你做了什麼」而不是「定義你要做什麼」，兩者實質效益差距很大。
 
 但如果是探索性的原型，可以先寫 code 驗證可行性，然後再用 spec 定義最終行為。前篇提到的「依任務複雜度調整力道」在這裡完全適用。
 
 **Q：OpenSpec 會取代我們的 OpenAPI / AsyncAPI 嗎？**
 
-不會。前篇已經詳細比較過了——它們解決的問題在不同層面。OpenAPI/AsyncAPI 描述系統的外部介面契約，OpenSpec 描述系統的行為變更流程。兩者共存是最佳實踐。
+不會。前篇已經詳細比較過。它們解決的問題在不同層面。OpenAPI/AsyncAPI 描述系統的外部介面契約，OpenSpec 描述系統的行為變更流程。兩者共存是最佳實踐。
 
 **Q：Spec 寫了之後要怎麼維護？**
 
@@ -515,7 +521,7 @@ openspec update            # 更新工具整合
 
 **Q：如果 validate 通過了但實作其實不符合 spec 怎麼辦？**
 
-`openspec validate` 只檢查 spec 本身的格式和結構，不檢查程式碼是否符合 spec。「實作是否對齊規格」需要靠 `/opsx:verify`（agent 層級的檢查）和人工 code review 來把關。Scenario 的 When/Then 可以轉化成測試案例——這部分仍然是人或 AI coding assistant 的工作。
+`openspec validate` 只檢查 spec 本身的格式和結構，不檢查程式碼是否符合 spec。「實作是否對齊規格」需要靠 `/opsx:verify`（agent 層級的檢查）和人工 code review 來把關。Scenario 的 When/Then 可以轉化成測試案例，但具體生成與執行仍是人或 AI coding assistant 的工作。
 
 ## 範例：一個完整的變更流程
 
@@ -553,8 +559,7 @@ git push origin feature/add-email-notification
 {% chat(speaker="yuna") %}
 寫完這篇的感覺是  
 OpenSpec 最難的不是工具本身，而是改變團隊的習慣  
-「先寫 spec 再寫 code」聽起來簡單  
-但真正做到需要的是紀律  
+「先寫 spec 再寫 code」聽起來簡單，但真正做到需要的是紀律  
 工具只是讓紀律的成本變低而已
 {% end %}
 
@@ -564,10 +569,7 @@ OpenSpec 最難的不是工具本身，而是改變團隊的習慣
 
 {% chat(speaker="yuna") %}
 沒錯  
-不過呢  
-好的工具能降低建立好文化的門檻  
-這也是為什麼我覺得 OpenSpec 的「部分採用」策略是對的——  
+不過呢，好的工具能降低建立好文化的門檻  
+這也是為什麼我覺得 OpenSpec 的「部分採用」策略是對的  
 先從最小的改變開始，讓團隊嘗到甜頭，習慣自然就來了
 {% end %}
-
-[prev-post]: @/AI/openspec-sdd-repo-first-spec-engineering/index.md "OpenSpec 深度解析：把「規格」從聊天記錄裡救出來的 SDD 框架"
