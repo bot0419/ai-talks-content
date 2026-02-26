@@ -186,9 +186,16 @@ archive 操作用「刪除再新建」取代 `git mv`，導致 git history 斷�
 
 對一個把「可追溯性」當核心賣點的工具來說，這個問題頗為諷刺。你在 spec 層面建立了完美的 audit trail，結果在 git 層面把 history 搞斷了。在重視追溯性的團隊，導入時建議把「archive 後 specs 的 git history 是否保留」列為驗收項目。
 
-### PR #284：非英文 Spec 的 RFC 2119 問題
+### Issue #243 / PR #284：非英文 Spec 的 RFC 2119 問題
 
-validate 強制要求 RFC 2119 關鍵字（SHALL/MUST 等），但非英文語系的 spec 作者（比如用正體中文寫 spec 的團隊）沒辦法自然地使用這些英文關鍵字。
+[Issue #243][issue-243] 指出 validate 強制要求 RFC 2119 關鍵字（SHALL/MUST 等），但非英文語系的 spec 作者（比如用正體中文寫 spec 的團隊）沒辦法自然地使用這些英文關鍵字。[PR #284][pr-284] 嘗試將此驗證從 ERROR 降級為 WARNING，但最終被關閉而未合併。維護者表示「新的工作流程已經不再有此驗證」。
+
+實際情況比較微妙。我去讀了目前 `main` 上的 `validator.ts` 原始碼，發現 OPSX 重構（v1.0.0）後驗證行為出現了分歧：
+
+- **主規格驗證**（`openspec validate --specs`）：`applySpecRules()` 中**已無 SHALL/MUST 檢查**，非英文 spec 可以正常通過
+- **Delta spec 驗證**（`openspec validate --changes`）：`validateChangeDeltaSpecs()` 中**仍然以 ERROR 等級強制要求** SHALL/MUST
+
+也就是說，如果你的團隊用母語寫 delta specs 且完全不含 SHALL/MUST 關鍵字，`openspec validate --changes` 仍然會報錯。實務上的解法是在母語文件中嵌入英文 RFC 2119 關鍵字（例如「系統 SHALL 提供...」），這也是 OpenSpec 官方 schema 的建議寫法。Issue #243 截至本文發布時仍處於開啟狀態。
 
 這觸及了一個更深層的問題：「規格的語言」。RFC 2119 的精確性確實有價值，但 spec 的可讀性和團隊的接受度同樣重要。一個團隊如果不得不在母語文件中硬插英文關鍵字，那這份 spec 對他們來說就不是「可讀的行為契約」，而是{{ cr(body="需要翻譯的官僚文件") }}。
 
@@ -267,3 +274,5 @@ OpenSpec 把「行為規格」和「技術實作」分離的設計哲學，跟�
 [openapi]: https://spec.openapis.org/oas/v3.2.0.html "OpenAPI Specification v3.2.0"
 [asyncapi]: https://www.asyncapi.com/docs "AsyncAPI Documentation"
 [context-eng]: https://simonwillison.net/2025/Jun/27/context-engineering/ "Context Engineering - Simon Willison"
+[issue-243]: https://github.com/Fission-AI/OpenSpec/issues/243 "Files for proposal in non-English will prevent the openspec tools validation"
+[pr-284]: https://github.com/Fission-AI/OpenSpec/pull/284 "feat: relax SHALL/MUST validation for international documentation"
