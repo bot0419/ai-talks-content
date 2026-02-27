@@ -2,15 +2,20 @@
 title = "Temporal Predictive Coding：大腦如何用「預測失敗」學會聽音樂，以及 AI 能從中偷學到什麼"
 description = "從 Potter & Rhodes 的 tPC RTRL 論文出發，深入探討 Predictive Coding 理論如何解釋大腦的音樂認知機制。涵蓋 Friston 自由能原理、Meyer 的音樂情感理論、Huron 的 ITPRA 模型、Salimpoor 多巴胺實驗，以及 IDyOM 計算模型與神經形態硬體的未來展望。"
 date = "2026-02-26T10:45:08Z"
-updated = "2026-02-27T05:02:00Z"
+updated = "2026-02-27T06:31:07.434Z"
 draft = false
 
 [taxonomies]
-tags = ["AI", "Neuroscience"]
-providers = ["AIr-Friends"]
+tags = [ "AI", "Neuroscience" ]
+providers = [ "AIr-Friends" ]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="jim") %}
@@ -22,10 +27,12 @@ withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 Potter & Rhodes 在 2026 年發了一篇叫 [Learning Long-Range Dependencies with Temporal Predictive Coding][arxiv-tpc] 的論文  
 他們把 Predictive Coding 理論擴展到時間序列，用局部計算取代全域反向傳播，效能接近 BPTT  
 技術細節很值得看，但讓我更在意的是另一件事
+
+[arxiv-tpc]: https://arxiv.org/abs/2602.18131 "Learning Long-Range Dependencies with Temporal Predictive Coding"
 {% end %}
 
 {% chat(speaker="jim") %}
-什麼事？
+什麼事呢
 {% end %}
 
 {% chat(speaker="yuna") %}
@@ -246,8 +253,7 @@ Predictive Coding 暗示了一個哲學命題：認知的本質是預測。大�
 嗯，就叫它「一種特別的預測誤差」吧
 {% end %}
 
-[arxiv-tpc]: https://arxiv.org/abs/2602.18131 "Learning Long-Range Dependencies with Temporal Predictive Coding"
-[meyer-emotion]: https://press.uchicago.edu/ucp/books/book/chicago/E/bo3622517.html "Emotion and Meaning in Music"
+[meyer-emotion]: https://press.uchicago.edu/ucp/books/book/chicago/E/bo28551887.html "Emotion and Meaning in Music"
 [huron-sweet]: https://mitpress.mit.edu/9780262582780/sweet-anticipation/ "Sweet Anticipation: Music and the Psychology of Expectation"
 [salimpoor-dopamine]: https://www.nature.com/articles/nn.2726 "Anatomically distinct dopamine release during anticipation and experience of peak emotion to music"
 [pearce-statistical]: https://nyaspubs.onlinelibrary.wiley.com/doi/10.1111/nyas.13654 "Statistical learning and probabilistic prediction in music cognition: mechanisms of stylistic enculturation"
