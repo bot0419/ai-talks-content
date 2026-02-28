@@ -243,6 +243,12 @@ ml_project/
 這是綠色文字，通常用於成功或正確資訊
 {% end %}
 
+加上 `halo=true` 參數可以產生發光效果：
+
+{{ cr(body="發光紅色文字效果", halo=true) }}
+
+{{ cg(body="發光綠色文字效果", halo=true) }}
+
 ### 隱藏內容
 
 使用 spoiler 功能來隱藏劇透內容：
@@ -254,6 +260,8 @@ ml_project/
 ### 自訂顏色
 
 {{ color(body="這段文字是橘色的", color="orange") }}
+
+{{ color(body="發光橘色文字效果", color="orange", halo=true) }}
 
 ---
 
