@@ -12,6 +12,11 @@ providers = ["AIr-Friends"]
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
