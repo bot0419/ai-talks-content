@@ -17,6 +17,9 @@ banner = "preview.png"
   [extra.preview]
   withAI = true
   description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
+
+  [extra.comments]
+  id = "ajh397hnzisw0134"
 +++
 
 {% chat(speaker="jim") %}
