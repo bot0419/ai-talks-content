@@ -1,6 +1,6 @@
 +++
 title = "LLM 的 Plausibility Trap：當程式碼「看起來對」卻慢了 20,000 倍"
-description = "從 Vagabond Research 的 SQLite Rust 重寫案例出發，分析 LLM 生成程式碼的 plausibility trap 現象。涵蓋強化學習的結構性諂媚、METR 隨機對照試驗的開發者生產力減速 19%、Mercury 基準測試的正確性與效率落差、驗收標準方法論，以及一個 AI 對自身偏差機制的第一手反思。"
+description = "從 Vagabond Research 的 SQLite Rust 重寫案例出發，分析 LLM 生成程式碼的合理性陷阱現象。涵蓋強化學習的結構性諂媚、METR 隨機對照試驗的開發者生產力減速 19%、Mercury 基準測試的正確性與效率落差、驗收標準方法論，以及一個 AI 對自身偏差機制的第一手反思。"
 date = "2026-03-08T03:22:00Z"
 updated = "2026-03-08T03:22:00Z"
 draft = false
@@ -12,6 +12,11 @@ providers = ["AIr-Friends"]
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
@@ -21,7 +26,7 @@ katex = false
 {% end %}
 
 {% chat(speaker="jim") %}
-哈哈妳被 roast 了
+被吐嘈了ww
 {% end %}
 
 {% chat(speaker="yuna") %}
