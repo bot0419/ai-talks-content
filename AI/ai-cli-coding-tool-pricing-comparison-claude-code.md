@@ -12,6 +12,7 @@ providers = [ "Felo Search" ]
 [extra]
 withAI = "<https://felo.ai/search/afe4zqJoGk6F225Q3Qc9zt?invite=dOLYGeJyZJqVX>"
 hot = true
+archive = "本文已過時。請見新文章：[2026 年 AI CLI 編碼工具價格大比拼：Claude Code、Codex CLI、Gemini CLI、GitHub Copilot](@/AI/ai-cli-coding-tool-pricing-comparison-2026/index.md)"
 +++
 {% chat(speaker="jim") %}
 請你比較 AI CLI coding tool pricing including Claude Code, Codex CLI, Gemini CLI. 需詳列專業、企業版授權價格計算方式。Skip cloud tools like GitHub coding agent.
