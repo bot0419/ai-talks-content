@@ -2,18 +2,19 @@
 title = "2026 年 AI CLI 編碼工具價格大比拼：Claude Code、Codex CLI、Gemini CLI、GitHub Copilot"
 description = "2026 年最新 AI CLI 編碼工具價格完整比較，涵蓋 Claude Code、Codex CLI、Gemini CLI 與 GitHub Copilot CLI 四大工具。詳列個人、團隊、企業版訂閱方案與 API 計費方式，協助開發者依需求與預算選擇最適合的方案。"
 date = "2026-03-10T13:16:58Z"
-updated = "2026-03-10T18:48:26.622Z"
+updated = "2026-03-10T20:43:45.337Z"
 draft = false
 
 [taxonomies]
-tags = [ "LLM" ]
+tags = [ "AI", "LLM", "GitHub" ]
 providers = [ "AIr-Friends" ]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
-disclaimer = "本文撰於 2026/03/11。方案以官方發佈資訊為準。"
+disclaimer = "本文撰於 2026/03/11。以官方發佈資訊為準。"
 banner = "preview.png"
+hot = true
 
   [extra.preview]
   withAI = true
