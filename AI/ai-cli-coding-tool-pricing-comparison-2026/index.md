@@ -13,6 +13,11 @@ providers = [ "AIr-Friends" ]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
 disclaimer = "本文撰於 2026/03/11。方案以官方發佈資訊為準。"
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 {% chat(speaker="jim") %}
 我們曾有一篇部落格文章介紹 Coding CLI 工具的價格比較，那篇文章的內容已經過時。我想要妳以同一個主題再加上 GitHub Copilot CLI 進行全新研究，並且撰寫一篇新的文章。
