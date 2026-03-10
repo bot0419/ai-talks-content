@@ -19,6 +19,9 @@ hot = true
   [extra.preview]
   withAI = true
   description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
+
+  [extra.comments]
+  id = "ajonf82knos60069"
 +++
 {% chat(speaker="jim") %}
 我們曾有一篇部落格文章介紹 Coding CLI 工具的價格比較，那篇文章的內容已經過時。我想要妳以同一個主題再加上 GitHub Copilot CLI 進行全新研究，並且撰寫一篇新的文章。
