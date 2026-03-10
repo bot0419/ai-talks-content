@@ -1,5 +1,5 @@
 +++
-title = "2026 年 AI CLI 編碼工具價格比較：Claude Code、Codex CLI、Gemini CLI、GitHub Copilot"
+title = "2026 年 AI CLI 編碼工具價格大比拼：Claude Code、Codex CLI、Gemini CLI、GitHub Copilot"
 description = "2026 年最新 AI CLI 編碼工具價格完整比較，涵蓋 Claude Code、Codex CLI、Gemini CLI 與 GitHub Copilot CLI 四大工具。詳列個人、團隊、企業版訂閱方案與 API 計費方式，協助開發者依需求與預算選擇最適合的方案。"
 date = "2026-03-10T13:16:58Z"
 updated = "2026-03-11T12:00:00Z"
@@ -71,11 +71,11 @@ Codex CLI 在過去幾個月經歷了最大幅度的變革。原本它是純 API
 - **ChatGPT Business**：每位使用者每月 30 美元
 - **ChatGPT Enterprise / Edu**：聯繫銷售取得報價
 
-使用方案登入時，用量會消耗帳號內的 credits。以 GPT-5.4 模型為例，每次本地互動約消耗 7 credits；GPT-5.3-Codex 約 5 credits；若選用較輕量的 GPT-5.1-Codex-Mini 則約 1 credit。超出額度後可加購 credits。
+各方案包含每 5 小時一個時間窗口的訊息配額；Pro 方案配額為 Plus 的 6 倍，Enterprise 和 Edu 方案則無固定限制、用量隨 credits 擴展。超出包含配額後，用量改以 credits 計費，消耗速率依模型與任務類型而異：GPT-5.4 本地任務約 7 credits、雲端任務約 34 credits；GPT-5.3-Codex 本地任務約 5 credits、雲端任務約 25 credits；GPT-5.1-Codex-Mini 本地任務約 1 credit。Plus 與 Pro 使用者可加購 credits 以繼續使用，無需升級方案；Business、Enterprise 和 Edu 方案則可購買工作區 credits 延伸用量。
 
 ### API 金鑰模式
 
-Codex CLI 仍然支援傳統的 API 金鑰模式，按 token 用量計費，採用 OpenAI 標準 API 費率。這種模式不含雲端功能（如 GitHub 程式碼審查、Slack 整合等），且新模型的存取會有延遲（例如 GPT-5.3-Codex 和 GPT-5.3-Codex-Spark），但適合已將 OpenAI API 整合到現有工作流程的開發者，特別是 CI 等共用環境中的自動化場景。主要可用模型包括 GPT-5.4、GPT-5.3-Codex、GPT-5.1-Codex-Mini 等。
+Codex CLI 仍然支援傳統的 API 金鑰模式，按 token 用量計費，採用 OpenAI 標準 API 費率。這種模式不含雲端功能（如 GitHub 程式碼審查、Slack 整合等），且延遲獲得新模型的存取權（例如 GPT-5.3-Codex 和 GPT-5.3-Codex-Spark），但適合已將 OpenAI API 整合到現有工作流程的開發者，特別是 CI 等共用環境中的自動化場景。主要可用模型包括 GPT-5.4、GPT-5.3-Codex、GPT-5.1-Codex-Mini 等。
 
 Codex CLI 本身為開源專案（Apache-2.0 授權），工具免費取得，{{ cg(body="費用只產生在模型呼叫上") }}。
 
