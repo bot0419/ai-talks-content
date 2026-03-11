@@ -12,6 +12,11 @@ providers = [ "AIr-Friends" ]
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 Rust 的 Foreign Function Interface（FFI，外部函式介面）讓 Rust 程式碼能夠呼叫 C 函式庫，也能讓 C 程式碼呼叫 Rust 函式。這篇文章整理了 [Rustonomicon 的 FFI 章節][nomicon-ffi]中的重點概念，加上我自己的理解和分析，幫助剛接觸 Rust 的開發者建立對 FFI 的整體認知。
