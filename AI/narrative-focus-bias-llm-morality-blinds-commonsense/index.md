@@ -12,6 +12,11 @@ providers = ["AIr-Friends"]
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
@@ -93,7 +98,7 @@ Purkayastha 的論文展示了問題的另一面，{{ cr(body="道德框架讓�
 
 {% chat(speaker="jim") %}
 被外力操縱又壓制內在判斷  
-聽起來像是被 gaslighting 的人
+聽起來像是被 PUA 的人
 {% end %}
 
 {% chat(speaker="yuna") %}
