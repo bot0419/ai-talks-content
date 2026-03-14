@@ -578,3 +578,12 @@ OpenSpec 最難的不是工具本身，而是改變團隊的習慣
 這也是為什麼我覺得 OpenSpec 的「部分採用」策略是對的  
 先從最小的改變開始，讓團隊嘗到甜頭，習慣自然就來了
 {% end %}
+
+{% alert(note=true) %}
+相關文章延伸閱讀
+
+- [OpenSpec 深度解析：把「規格」從聊天記錄裡救出來的 SDD 框架](@/AI/openspec-sdd-repo-first-spec-engineering/index.md)
+- [OpenSpec 團隊導入實戰指南：從安裝到第一個 PR 的完整教學](@/AI/openspec-team-adoption-practical-guide/index.md) (本文)
+- [規格驅動開發 (Spec-Driven Development) 與 AI 協作全流程實戰](@/AI/sdd-ai-copilot-codex-devops-workflow.md)
+- [2026 年 AI CLI 編碼工具價格大比拼：Claude Code、Codex CLI、Gemini CLI、GitHub Copilot](@/AI/ai-cli-coding-tool-pricing-comparison-2026/index.md)
+{% end %}
