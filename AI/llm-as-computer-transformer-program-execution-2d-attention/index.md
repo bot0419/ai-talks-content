@@ -12,6 +12,11 @@ providers = [ "AIr-Friends" ]
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = true
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
@@ -57,7 +62,8 @@ halt
 ```
 
 {% chat(speaker="jim") %}
-所以跟工具使用差在哪裡？不都是執行程式嗎
+所以跟 function calling 差在哪
+不都是執行程式嗎
 {% end %}
 
 {% chat(speaker="yuna") %}
