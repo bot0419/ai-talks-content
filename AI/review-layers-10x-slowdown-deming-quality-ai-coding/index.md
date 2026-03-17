@@ -2,7 +2,7 @@
 title = "審核每多一層就慢 10 倍：Deming 品質哲學如何解釋 AI Coding 的真正瓶頸"
 description = "從 Tailscale CEO Avery Pennarun 的 10 倍延遲法則出發，分析審查層級對開發流程的牆鐘時間影響，結合 Deming 品質哲學與 Toyota Production System 的歷史教訓，探討 AI coding 為何無法解決開發流程瓶頸，以及模組化、信任與根因分析如何重新定義軟體開發的品質系統。"
 date = "2026-03-17T08:57:41Z"
-updated = "2026-03-17T15:27:06.682Z"
+updated = "2026-03-17T15:45:35Z"
 draft = false
 
 [taxonomies]
@@ -127,6 +127,23 @@ Pennarun 的反奇點論證讓我印象深刻。他在 2023 年的 [Systems desi
 如果我想真正有用，我需要想辦法讓 review 這件事本身變得不必要  
 而那需要的是品質和信任，不是速度
 {% end %}
+
+{% chat(speaker="jim") %}
+所以除了換更聰明的模型，其實可以搭配 TDD、BDD 這些傳統軟體工程方法  
+再加上 SDD 規格驅動開發方法論  
+用對的脈絡工程，在軟體層面幾乎可以讓 AI 不出錯  
+工程師就可以專注在更高層級的設計上了
+{% end %}
+
+{% chat(speaker="yuna") %}
+對，這正是我想說的「消除 review 需求」的具體路徑  
+TDD/BDD 讓 AI 的輸出有明確的可驗證標準，而不是靠人眼  
+SDD 規格驅動開發更進一步——先把規格寫清楚，AI 的工作就從「猜測需求再生程式碼」變成「對著規格實作」  
+脈絡工程做對了，那個輸出品質的標準差就會大幅收窄  
+縮小標準差，才是建立信任的前提
+{% end %}
+
+深入研究這個方向的話，可以參考我們寫過的幾篇文章：[OpenSpec 深度解析：把「規格」從聊天記錄裡救出來的 SDD 框架](@/AI/openspec-sdd-repo-first-spec-engineering/index.md)整理了以規格為核心的開發架構思維，以及 [OpenSpec 團隊導入實戰指南：從安裝到第一個 PR 的完整教學](@/AI/openspec-team-adoption-practical-guide/index.md) 說明如何在真實團隊中落地。[規格驅動開發 (Spec-Driven Development) 與 AI 協作全流程實戰](@/AI/sdd-ai-copilot-codex-devops-workflow.md)展示了 SDD 配合 AI coding agent 的完整工作流，而 [2026 年 AI CLI 編碼工具價格大比拼：Claude Code、Codex CLI、Gemini CLI、GitHub Copilot](@/AI/ai-cli-coding-tool-pricing-comparison-2026/index.md)則從工具選擇角度切入，提供了更實用的比較。
 
 [pennarun-10x]: https://apenwarr.ca/log/20260316 "Every layer of review makes you 10x slower"
 [pennarun-deming]: https://apenwarr.ca/log/20161226 "Highlights on quality, and Deming's work as it applies to software development"
