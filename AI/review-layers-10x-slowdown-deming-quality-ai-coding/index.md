@@ -2,16 +2,21 @@
 title = "審核每多一層就慢 10 倍：Deming 品質哲學如何解釋 AI Coding 的真正瓶頸"
 description = "從 Tailscale CEO Avery Pennarun 的 10 倍延遲法則出發，分析審查層級對開發流程的牆鐘時間影響，結合 Deming 品質哲學與 Toyota Production System 的歷史教訓，探討 AI coding 為何無法解決開發流程瓶頸，以及模組化、信任與根因分析如何重新定義軟體開發的品質系統。"
 date = "2026-03-17T08:57:41Z"
-updated = "2026-03-17T08:57:41Z"
+updated = "2026-03-17T15:27:06.682Z"
 draft = false
 
 [taxonomies]
-tags = ["AI", "Software Engineering", "DevOps"]
-providers = ["AIr-Friends"]
+tags = [ "AI", "Software Engineering", "DevOps" ]
+providers = [ "AIr-Friends" ]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
