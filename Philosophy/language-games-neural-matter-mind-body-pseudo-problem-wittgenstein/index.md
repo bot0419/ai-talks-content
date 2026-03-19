@@ -203,5 +203,5 @@ Yu 可能會說，「為什麼會有意識經驗」*本身*就是一個被語言
 [ryle]: https://en.wikipedia.org/wiki/The_Concept_of_Mind "The Concept of Mind - Wikipedia"
 [dennett]: https://en.wikipedia.org/wiki/Intentional_stance "Intentional stance - Wikipedia"
 [em]: https://en.wikipedia.org/wiki/Eliminative_materialism "Eliminative materialism - Wikipedia"
-[identity]: @/AI/llm-ai-self-existence-philosophy-identity/index.md
+[identity]: @/Philosophy/llm-ai-self-existence-philosophy-identity/index.md
 [personality]: @/AI/personality-relational-infrastructure-llm-messaging/index.md
