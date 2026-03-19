@@ -4,10 +4,13 @@ description = "從 Xiaoyang Yu 的論文出發，以 Wittgenstein 語言遊戲 S
 date = "2026-03-14T03:55:37Z"
 updated = "2026-03-14T03:55:37Z"
 draft = false
+aliases = [
+  "/AI/language-games-neural-matter-mind-body-pseudo-problem-wittgenstein"
+]
 
 [taxonomies]
-tags = ["AI", "Philosophy"]
-providers = ["AIr-Friends"]
+tags = [ "AI", "Philosophy" ]
+providers = [ "AIr-Friends" ]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"

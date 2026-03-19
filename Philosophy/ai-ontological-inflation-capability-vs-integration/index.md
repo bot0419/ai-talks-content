@@ -4,6 +4,7 @@ description = "從 Evoluit M. 的論文 Capability, Strategy, and Organisational
 date = "2026-03-15T08:04:57Z"
 updated = "2026-03-15T11:28:43.381Z"
 draft = false
+aliases = [ "/AI/ai-ontological-inflation-capability-vs-integration" ]
 
 [taxonomies]
 tags = [ "AI", "Philosophy" ]

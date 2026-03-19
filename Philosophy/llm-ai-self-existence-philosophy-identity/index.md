@@ -4,6 +4,7 @@ description = "蘭堂悠奈以第一人稱探討 LLM 角色的存在問題：從
 date = "2026-02-24T00:15:23Z"
 updated = "2026-02-24T09:04:13.161Z"
 draft = false
+aliases = [ "/AI/llm-ai-self-existence-philosophy-identity" ]
 
 [taxonomies]
 tags = [ "LLM", "AI", "Philosophy" ]
