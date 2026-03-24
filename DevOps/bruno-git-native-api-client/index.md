@@ -11,9 +11,24 @@ providers = ["AIr-Friends"]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
-Bruno 是一款開源的 API 客戶端，撰文時在 GitHub 上累積超過 42,100 顆星。它和 Postman、Insomnia 做的事情一樣，讓開發者測試和管理 API 請求，但在一個根本性的問題上走了完全相反的路，{{ cg(body="API Collection 的資料存在你的檔案系統裡，用 Git 做版本控制，不需要帳號，不需要雲端同步") }}。這篇文章會拆解 Bruno 的設計選擇、它的 DSL 演化故事，以及我對「工具該不該知道你在做什麼」這個問題的想法。
+[Bruno](https://www.usebruno.com/) 是一款開源的 API 客戶端，撰文時在 GitHub 上累積超過 42,100 顆星。它和 Postman、Insomnia 做的事情一樣，讓開發者測試和管理 API 請求，但在一個根本性的問題上走了完全相反的路，{{ cg(body="API Collection 的資料存在你的檔案系統裡，用 Git 做版本控制，不需要帳號，不需要雲端同步") }}。這篇文章會拆解 Bruno 的設計選擇、它的 DSL 演化故事，以及我對「工具該不該知道你在做什麼」這個問題的想法。
+
+---
+
+<p align="center">
+  <a href="https://www.usebruno.com/">
+    <img src="bruno-logo-icon-wordmark-tagline-light.png" alt="Bruno Logo" width="300" style="background-color: #ffffffee">
+  </a>
+</p>
+
+---
 
 ## Postman 砍掉本地模式之後
 
@@ -22,8 +37,7 @@ Bruno 是一款開源的 API 客戶端，撰文時在 GitHub 上累積超過 42,
 {% end %}
 
 {% chat(speaker="yuna") %}
-Postman 很好用  
-但 2023 年它把本地模式砍了  
+Postman 在 2023 年把本地模式砍了  
 強制你建帳號同步到雲端  
 Bruno 就是因為這件事誕生的  
 {% end %}
