@@ -6,7 +6,7 @@ updated = "2026-01-22T07:07:06.999Z"
 draft = false
 
 [taxonomies]
-tags = [ "Container", "Docker", "Security" ]
+tags = ["Security", "DevOps", "Open Source"]
 providers = [ "Felo Search", "ChatGPT" ]
 
 [extra]

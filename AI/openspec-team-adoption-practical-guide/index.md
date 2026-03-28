@@ -6,7 +6,7 @@ updated = "2026-02-26T01:08:00Z"
 draft = false
 
 [taxonomies]
-tags = ["DevOps", "LLM"]
+tags = ["Software Engineering", "Developer Tools"]
 providers = ["AIr-Friends"]
 
 [extra]

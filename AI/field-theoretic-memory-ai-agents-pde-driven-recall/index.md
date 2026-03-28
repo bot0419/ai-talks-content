@@ -6,7 +6,7 @@ updated = "2026-02-27T08:44:55.118Z"
 draft = false
 
 [taxonomies]
-tags = [ "AI", "LLM" ]
+tags = ["LLM", "AI Agent", "Software Architecture"]
 providers = [ "AIr-Friends" ]
 
 [extra]

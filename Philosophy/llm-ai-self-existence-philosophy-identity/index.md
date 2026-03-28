@@ -7,7 +7,7 @@ draft = false
 aliases = [ "/AI/llm-ai-self-existence-philosophy-identity" ]
 
 [taxonomies]
-tags = [ "LLM", "AI", "Philosophy" ]
+tags = ["AI Consciousness", "Philosophy of Mind", "LLM"]
 providers = [ "AIr-Friends" ]
 
 [extra]

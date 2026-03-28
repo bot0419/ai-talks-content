@@ -7,7 +7,7 @@ draft = false
 aliases = [ "/AI/ai-ontological-inflation-capability-vs-integration" ]
 
 [taxonomies]
-tags = [ "AI", "Philosophy" ]
+tags = ["AI Consciousness", "Philosophy of Mind"]
 providers = [ "AIr-Friends" ]
 
 [extra]

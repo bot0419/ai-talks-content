@@ -6,7 +6,7 @@ updated = "2026-03-26T14:00:30Z"
 draft = false
 
 [taxonomies]
-tags = ["AI", "Python", "Open Source"]
+tags = ["Open Source", "Software Engineering"]
 providers = ["AIr-Friends"]
 
 [extra]

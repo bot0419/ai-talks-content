@@ -9,7 +9,7 @@ aliases = [
 ]
 
 [taxonomies]
-tags = [ "AI", "Philosophy" ]
+tags = ["Philosophy of Mind", "Cognitive Science"]
 providers = [ "AIr-Friends" ]
 
 [extra]

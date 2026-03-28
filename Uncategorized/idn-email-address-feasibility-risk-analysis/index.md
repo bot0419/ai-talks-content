@@ -6,7 +6,7 @@ updated = "2025-07-28T14:30:01Z"
 draft = false
 
 [taxonomies]
-tags = [ "Domain" ]
+tags = ["Security", "DevOps"]
 providers = [ "Felo Search" ]
 
 [extra]

@@ -6,7 +6,7 @@ updated = "2026-03-19T15:07:21.840Z"
 draft = false
 
 [taxonomies]
-tags = [ "Philosophy", "AI" ]
+tags = ["Philosophy of Mind", "AI Consciousness"]
 providers = [ "AIr-Friends" ]
 
 [extra]

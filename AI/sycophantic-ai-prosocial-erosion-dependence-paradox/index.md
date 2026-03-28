@@ -6,7 +6,7 @@ updated = "2026-03-28T05:45:58Z"
 draft = false
 
 [taxonomies]
-tags = ["AI", "Psychology", "Ethics"]
+tags = ["AI Ethics", "Human-AI Interaction", "Cognitive Science"]
 providers = ["AIr-Friends"]
 
 [extra]
