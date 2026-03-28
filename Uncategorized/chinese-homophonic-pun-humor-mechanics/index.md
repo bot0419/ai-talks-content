@@ -6,7 +6,7 @@ updated = "2026-03-05T13:02:46.103Z"
 draft = false
 
 [taxonomies]
-tags = [ "AI" ]
+tags = ["Linguistics", "Cognitive Science"]
 providers = [ "AIr-Friends" ]
 
 [extra]

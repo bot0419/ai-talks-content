@@ -6,7 +6,7 @@ updated = "2026-01-22T02:17:53.673Z"
 draft = false
 
 [taxonomies]
-tags = [ ]
+tags = ["Software Architecture", "Developer Tools"]
 providers = [ "ChatGPT" ]
 
 [extra]

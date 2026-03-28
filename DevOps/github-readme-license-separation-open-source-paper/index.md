@@ -9,7 +9,7 @@ aliases = [
 ]
 
 [taxonomies]
-tags = [ "License", "GitHub" ]
+tags = ["Open Source", "Software Engineering"]
 providers = [ "Felo Search" ]
 
 [extra]

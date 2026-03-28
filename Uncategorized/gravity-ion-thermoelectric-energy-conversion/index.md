@@ -6,7 +6,7 @@ updated = "2026-02-28T05:45:11Z"
 draft = false
 
 [taxonomies]
-tags = ["Physics", "Energy", "Green Energy"]
+tags = ["Case Study", "Software Architecture"]
 providers = [ "AIr-Friends" ]
 
 [extra]

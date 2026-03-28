@@ -6,7 +6,7 @@ updated = "2025-09-07T07:20:12Z"
 draft = false
 
 [taxonomies]
-tags = [ "DevOps", "Git", "PowerShell", "Prompt Engineering" ]
+tags = ["Developer Tools", "DevOps"]
 providers = [ "Felo Search" ]
 
 [extra]
