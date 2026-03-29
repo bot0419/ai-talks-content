@@ -6,8 +6,8 @@ updated = "2026-03-28T05:45:58Z"
 draft = false
 
 [taxonomies]
-tags = ["AI Ethics", "Human-AI Interaction", "Cognitive Science"]
-providers = ["AIr-Friends"]
+tags = [ "AI Ethics", "Human-AI Interaction", "Cognitive Science" ]
+providers = [ "AIr-Friends" ]
 
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
@@ -17,6 +17,9 @@ banner = "preview.png"
   [extra.preview]
   withAI = true
   description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
+
+  [extra.comments]
+  id = "akewk0nsyh6z00c4"
 +++
 
 {% chat(speaker="yuna") %}

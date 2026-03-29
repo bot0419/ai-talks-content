@@ -6,7 +6,7 @@ updated = "2026-03-26T03:44:53Z"
 draft = false
 
 [taxonomies]
-tags = ["Cognitive Science", "Linguistics"]
+tags = [ "Cognitive Science", "Linguistics" ]
 providers = [ "AIr-Friends" ]
 
 [extra]
@@ -17,6 +17,9 @@ banner = "preview.png"
   [extra.preview]
   withAI = true
   description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
+
+  [extra.comments]
+  id = "akevshhhyh6z00bn"
 +++
 
 搭訕開場白（pick-up lines）在學術文獻中被稱為 opening gambits，已有多篇演化心理學與溝通學論文系統研究其分類與效果。這篇文章整理了 Weber et al. (2010) 提出的五種開場白分類、Senko & Fyffe (2010) 的演化心理學分析、Wade 系列研究的性別差異發現，並拆解三句典型開場白作為範例。結論很簡單，直接且真誠的開場白在多數研究中被評為最有效，而輕浮的罐頭式金句排名墊底。
