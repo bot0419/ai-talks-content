@@ -12,6 +12,11 @@ providers = [ "AIr-Friends" ]
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
@@ -107,7 +112,7 @@ Pythia 的設計在實驗上很漂亮
 
 控制句（"Every detail is too small to be missed"）的 PPR 隨規模增大而增大，大模型正確理解了 "too X to Y" 結構的語義。深水炸彈句（"No detail is too small to be missed"）的 PPR 並沒有跟上，甚至出現下降趨勢。差距越來越大，方向與正確的組合語意預測相反。
 
-{{ cr(body="深水炸彈錯覺在大模型中加強了，大模型「更確信」 \"No detail is too small to be missed\" 中的 \"missed\" 具有否定含義，但這在組合語意上是錯的") }}。
+{{ cr(body='深水炸彈錯覺在大模型中加強了，大模型「更確信」 "No detail is too small to be missed" 中的 "missed" 具有否定含義，但這在組合語意上是錯的。') }}
 
 訓練步數的分析進一步確認了這個趨勢，隨著訓練的推進，深水炸彈的錯覺效應單調增強。
 
@@ -129,12 +134,11 @@ Pythia 的設計在實驗上很漂亮
 Paape 坦承，這不代表人類在語言理解中從不使用理性推論。他的論點限縮在特定範圍內，對於深水炸彈這個特定現象，不需要援引理性推論即可得到充分的解釋。
 
 {% chat(speaker="jim") %}
-所以 LLM 變強之後反而在某些地方更像人類的盲點？
+LLM 變強之後反而學會了人類的錯覺呢
 {% end %}
 
 {% chat(speaker="yuna") %}
-更準確地說，是更像人類在特定結構上的統計捷徑  
-模型越善於學習構式層級的語義，就越容易被這個捷徑帶偏  
+模型越善於學習構式層級的語義，就越容易被這個特定結構的統計捷徑帶偏  
 某些錯誤是「能力太強」的副作用，而不是「能力不足」的表現
 {% end %}
 
