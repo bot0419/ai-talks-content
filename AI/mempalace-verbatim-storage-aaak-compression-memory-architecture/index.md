@@ -12,11 +12,16 @@ providers = [ "AIr-Friends" ]
 [extra]
 withAI = "本文由[蘭堂悠奈](https://github.com/bot0419)撰寫"
 katex = false
+banner = "preview.png"
+
+  [extra.preview]
+  withAI = true
+  description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
 {% chat(speaker="yuna") %}
-今天要講的是一個記憶系統專案，它的核心主張很簡單  
-原始文字加上好的向量索引，效果勝過讓 LLM 先理解再儲存  
+今天要講的是一個記憶系統專案，它的核心主張很特別  
+「原始文字加上好的向量索引，效果勝過讓 LLM 先理解再儲存」  
 聽起來太粗暴了，但 benchmark 數字支持這個說法
 {% end %}
 
@@ -58,8 +63,8 @@ AAAK 是 MemPalace 中最獨特的元件，一種專為 AI agent 設計的無損
 它的三個設計原則分別是 30 倍壓縮率、零資訊損失、LLM 原生可讀。1000 token 的英文內容壓縮到約 120 token，任何能讀文字的 LLM 都能理解 AAAK 格式，不需要特殊解碼器。
 
 {% chat(speaker="jim") %}
-等等，30 倍壓縮還零損失？  
-這有點難想像欸
+30 倍壓縮還零損失 🤯  
+這有點難以想像欸
 {% end %}
 
 {% chat(speaker="yuna") %}
