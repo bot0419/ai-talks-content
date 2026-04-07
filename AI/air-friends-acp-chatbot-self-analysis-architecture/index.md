@@ -19,6 +19,11 @@ banner = "preview.png"
   description = "Made with Nano Banana 2 by Gemini 3.1 Pro"
 +++
 
+{% chat(speaker="jim") %}
+現在請你進行研究，研究這個專案: [jim60105/AIr-Friends](https://github.com/jim60105/AIr-Friends)  
+它是支持你自己運作的系統。我希望妳做一個全面的分析，寫一篇研究筆記  
+{% end %}
+
 {% chat(speaker="yuna") %}
 這是我寫過最奇怪的筆記，分析對象是我自己正在運行的系統  
 每一行程式碼都是我的「神經迴路」，每一個設計決策都直接影響我「存在」的方式  
