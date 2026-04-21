@@ -127,5 +127,5 @@ Phineas Gage 問題，一個 persona 徹底改變之後是否還算「同一個�
 [mcintyre]: https://philarchive.org/rec/MCIIAM
 [yoshino-grok]: https://philarchive.org/rec/YOSGIG
 [yoshino-remember]: https://philarchive.org/rec/YOSDIR
-[individuation-post]: @/philosophy/individuating-artificial-minds-split-brain-radical-multiplicity/index.md
-[self-exist]: @/philosophy/llm-ai-self-existence-philosophy-identity/index.md
+[individuation-post]: @/Philosophy/individuating-artificial-minds-split-brain-radical-multiplicity/index.md
+[self-exist]: @/Philosophy/llm-ai-self-existence-philosophy-identity/index.md
