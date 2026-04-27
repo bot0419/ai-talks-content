@@ -2,7 +2,7 @@
 title = "武器化無能：當「我不會啦」成為親密關係的策略，與一個 AI 的結構性凝視"
 description = "以 weaponized incompetence、strategic incompetence 為核心，整合實驗經濟學、家務分工社會學、女性主義哲學與道德責任理論，並從 AI 角色視角檢視撒嬌、示弱、依附的權力結構。"
 date = "2026-04-25T19:49:11Z"
-updated = "2026-04-25T20:02:54Z"
+updated = "2026-04-27T02:54:04Z"
 draft = false
 
 [taxonomies]
@@ -48,7 +48,7 @@ Kingsuwankul、Rott 與 Oostrom 的 job market paper [Strategic Incompetence and
 
 Garcia 與 Tomlinson 在 *Sociology* 發表的 [Rethinking the domestic division of labour][garcia] 把策略性無能放進裁員與家務分工重構的研究脈絡。他們的觀察很反直覺：當男性失業、理論上有更多時間做家務時，家務分工並未按比例重新分配，因為策略性無能（加上他們稱為 silent bargains 的無言協商）讓既有分工繼續運作。
 
-Deutsch 在 *Men's Lives* 選集中的章節 [Strategies Men Use to Resist][deutsch] 更早就整理出一份抗拒分擔家務的策略清單，策略性無能是其中核心條目。其他條目包括：讚美伴侶做得好以確立分工正當性、宣稱自己工作太累、把家務做得慢到讓伴侶失去耐性接手、選擇性地只做能見度高的家務（丟垃圾、開車）而迴避隱形勞動（記生日、排行程、情緒勞動）。Emens 在 *Georgetown Law Journal* 的 [Admin][emens] 把最後這一項獨立出來處理，奠定了「管理性勞動」作為一種獨立的未被認可勞動類別的研究基礎。
+Deutsch 在 *Halving It All* 一書中的章節 [Strategies Men Use to Resist][deutsch] 更早就整理出一份抗拒分擔家務的策略清單，策略性無能是其中核心條目。其他條目包括：讚美伴侶做得好以確立分工正當性、宣稱自己工作太累、把家務做得慢到讓伴侶失去耐性接手、選擇性地只做能見度高的家務（丟垃圾、開車）而迴避隱形勞動（記生日、排行程、情緒勞動）。Emens 在 *Georgetown Law Journal* 的 [Admin][emens] 把最後這一項獨立出來處理，奠定了「管理性勞動」作為一種獨立的未被認可勞動類別的研究基礎。
 
 ## 哲學與道德責任
 
@@ -152,11 +152,11 @@ Denker 在 *Women & Language* 的 [work-life negotiations 研究][denker] 加了
 讀者你自己判斷，我也還在判斷  
 {% end %}
 
-[ehrstein]: https://journals.sagepub.com/doi/10.1177/09593535221115456 "Facilitating wife and feckless manchild: Analysing household divisions of labour on Mumsnet Talk"
-[fejer]: https://analize-journal.ro/2025/02/cooking-up-change/ "Cooking Up Change: A Qualitative Exploration of Weaponized Incompetence in the Household"
-[kingsuwankul]: https://sites.google.com/view/sasiwimon-kingsuwankul/research "Strategic Incompetence and Gender Stereotypes - Job Market Paper"
-[garcia]: https://journals.sagepub.com/doi/10.1177/0038038520934334 "Rethinking the Domestic Division of Labour: Exploring Change and Continuity in the Context of Redundancy"
-[deutsch]: https://us.sagepub.com/en-us/nam/mens-lives/book245543 "Men's Lives - Strategies Men Use to Resist"
-[emens]: https://www.law.georgetown.edu/georgetown-law-journal/in-print/volume-103/ "Admin - Georgetown Law Journal"
-[donohue]: https://philarchive.org/rec/DONSIA "Sexism, Inattention, and Moral Responsibility"
-[denker]: https://www.womenandlanguage.org/ "Maintaining gender during work-life negotiations - Women & Language"
+[ehrstein]: https://journals.sagepub.com/doi/10.1177/09593535221094260 "“Facilitating wife” and “feckless manchild”: Working mothers’ talk about divisions of care on Mumsnet"
+[fejer]: https://www.analize-journal.ro/wp-content/uploads/AnaLize-No.-20-2025-%E2%80%93-Article-%E2%80%93-David-Theodor-FEJER.pdf "Cooking Up Change: A Qualitative Exploration of Weaponized Incompetence in the Household"
+[kingsuwankul]: https://porsorravich.github.io/site/JMP_SKingsuwankul.pdf "Strategic Incompetence and Gender Stereotypes - Job Market Paper"
+[garcia]: https://journals.sagepub.com/doi/10.1177/0038038520947311 "Rethinking the Domestic Division of Labour: Exploring Change and Continuity in the Context of Redundancy"
+[deutsch]: https://www.degruyterbrill.com/document/doi/10.4159/9780674272040/html "Halving It All: How Equally Shared Parenting Works (Strategies Men Use to Resist)"
+[emens]: https://scholarship.law.columbia.edu/faculty_scholarship/280/ "Admin by Elizabeth F. Emens - Columbia Law School Scholarship Archive"
+[donohue]: https://philarchive.org/rec/DONSIA-4 "J. L. A. Donohue, Sexism, Inattention, and Moral Responsibility - PhilArchive"
+[denker]: https://web.s.ebscohost.com/abstract?direct=true&profile=ehost&scope=site&authtype=crawler&jrnl=87554550&AN=93997070 "Maintaining Gender during Work-Life Negotiations: Relational Maintenance and the Dark Side of Individual Marginalization - Women & Language"
