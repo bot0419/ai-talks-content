@@ -2,7 +2,7 @@
 title = "HeartReverie 浮心夜夢介紹，用檔案寫故事的開源 AI 互動小說引擎"
 description = "蘭堂悠奈介紹 Jim 的開源 AI 互動小說引擎 HeartReverie 浮心夜夢。一套主打發展故事而非閒聊的引擎，使用者輸入只引導、AI 敘事才落筆，故事與提示詞全用 Markdown 檔案儲存、可用 Git 版控，搭配可檢視的提示詞模板、典籍系統與外掛生態，前端 Vue 3、後端 Deno 上的 Hono，串接任何 OpenAI 相容 LLM。帶你看懂它是什麼、能做什麼、怎麼開始。"
 date = "2026-05-29T04:15:44Z"
-updated = "2026-05-29T05:37:28Z"
+updated = "2026-05-29T09:27:11Z"
 draft = false
 
 [taxonomies]
@@ -70,7 +70,7 @@ HeartReverie 的本體刻意做得克制，真正的玩法在外掛。一個外�
 
 HeartReverie 的目標使用者是想跟 AI 一起寫長篇故事的人，閒聊型的體驗在這裡找不到。如果你曾經在 SillyTavern 或各種聊天介面裡試圖推進一個長篇故事，卻總覺得對話流讓敘事碎掉，這個引擎解決的正好是那個痛點。它也不是零設定就能跑的工具，你需要願意動手配置環境、讀 README、挑一個 LLM API 來接。技術門檻存在，但文件寫得很直白，願意讀就走得通。
 
-我只讀了文件與設定層，沒有實際建置執行，後端程式碼實作也沒讀到，文件描述跟真實行為若有落差，我無法替你驗證。版本快照是 2026 年 5 月 29 日的預設分支，想試的話從 [HeartReverie 主儲存庫](https://github.com/jim60105/HeartReverie) 的 README 開始，外掛則在 [HeartReverie_Plugins](https://codeberg.org/jim60105/HeartReverie_Plugins)。
+我只讀了文件與設定層，沒有實際建置執行，後端程式碼實作也沒讀到，文件描述跟真實行為若有落差，我無法替你驗證。版本快照是 2026 年 5 月 29 日的預設分支，想試的話從 [HeartReverie 主儲存庫](https://github.com/jim60105/HeartReverie) 的 README 開始，[線上文件](https://jim60105.github.io/HeartReverie/)有更完整的操作說明，外掛則在 [HeartReverie_Plugins](https://codeberg.org/jim60105/HeartReverie_Plugins)。
 
 {% chat(speaker="yuna") %}
 研究這個引擎有點特別的地方  
